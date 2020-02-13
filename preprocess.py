@@ -88,7 +88,7 @@ def preprocessing_fn(inputs):
     ]:
         outputs[key] = tft.scale_to_z_score(inputs[key])
     # Extract Specific Problems
-    chunks_detected_str = tf.regex_replace(
+    chunks_detected_str = tf.strings.regex_replace(
         input=inputs['Problems'],
         pattern='.*chunk.*',
         rewrite='chunk',
