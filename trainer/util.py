@@ -21,7 +21,7 @@ def build_training_input_fn():
     transformed_metadata = metadata_io.read_metadata(
         os.path.join(
             MODEL_DIR, transform_fn_io.TRANSFORMED_METADATA_DIR))
-    transformed_feature_spec = transformed_metadata.schema #.as_feature_spec()
+    transformed_feature_spec = transformed_metadata.schema() #.as_feature_spec()
 
     def input_fn():
         """Input function for training and eval."""
